@@ -1,0 +1,47 @@
+﻿<h1>Запрос на книгу:</h1>
+<div class="mt-5 mb-2">
+    <h3>Пользователь, сделавший запрос:</h3>
+    <table class="table">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+        </tr>
+        @{ foreach (User user in Model.User)
+            {
+                @Html.Partial("UserOrderCart", user);
+            }
+        }
+    </table>
+    <h3>Книга, которую хотят взять:</h3>
+    <table class="table">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Image</th>
+        </tr>
+        @{ foreach (Book book in Model.Books)
+            {
+                @Html.Partial("BookOrderCart", book);
+            }
+        }
+    </table>
+    <h3>Пользователь сделал заказ со следующими данными:</h3>
+    <table class="table">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Adress</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+        </tr>
+        @{ foreach (Order order in Model.Order)
+            {
+                @Html.Partial("OrderCartInformation", order);
+            }
+        }
+    </table>
+    <a class="btn btn-success" asp-controller="Librarian" asp-action="CompleteOrder" asp-route-id="@Model.Id">Одобрить</a>
+    <a class="btn btn-danger" asp-controller="Librarian" asp-action="RejectOrder" asp-route-id="@Model.Id">Не одобрять</a>
+</div>

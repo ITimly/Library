@@ -1,0 +1,18 @@
+﻿<h1>Все книги</h1>
+<form class="form-inline" method="post">
+    <select class="form-control mx-sm-2" name="genre">
+        @foreach (Genre genre in Model.getAllGenres)
+        {
+            @Html.Partial("AllGenres", genre);
+        }
+    </select>
+    <input class="btn btn-primary mt-1 mb-1" type="submit" value="Выбрать" />
+</form>
+<h3>@Model.currGenre</h3>
+<div class="row mt-5 mb-2">
+    @{  foreach (Book book in Model.getAllBooks)
+        {
+            @Html.Partial("AllBooks", book);
+        }
+    }
+</div>

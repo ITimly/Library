@@ -1,0 +1,19 @@
+﻿<div class="container">
+    @if (Model.OrderCart.OrderCartElements.Count == 0)
+    {
+        <h3>Тут пока ничего нет</h3>
+    }
+    else
+    {
+        foreach (var el in Model.OrderCart.OrderCartElements)
+        {
+            <div class="alert alert-primary mt-3">
+                <img class="img-thumbnail img-fluid mr-2" style="width: 100px" src="@el.Book.Img" alt="@el.Book.Name>" />
+                <b>Книга: </b>@el.Book.Name<br />
+                <a class="btn btn-warning mt-2 mb-1" asp-controller="OrderCart" asp-action="RemoveFromCart" asp-route-id="@el.Id">Удалить из корзины</a>
+            </div>
+        }
+        <hr />
+        <a class="btn btn-danger" asp-controller="Order" asp-action="Index">Забронировать</a>
+    }
+</div>

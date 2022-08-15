@@ -1,0 +1,8 @@
+﻿@model Book
+ <div class="col-lg-4">
+     <img class="img-thumbnail" src="@Model.Img" alt="@Model.Name"/>
+     <h2 class="text-truncate">@Model.Name</h2>
+     <p class="text-truncate">@Model.Desc</p>
+     <p>Количество: @Model.Quantity</p>
+     <p><a class="btn btn-warning @(Model.Quantity < 1 ? "disabled":"")" asp-controller="OrderCart" asp-action="AddToCart" asp-route-id="@Model.Id">Добавить в корзину</a></p>
+ </div>

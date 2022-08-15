@@ -1,0 +1,8 @@
+﻿<h1>Рекомендуем!</h1>
+<div class="row mt-5 mb-2">
+    @{ foreach (Book book in Model.FavBooks)
+        {
+            @Html.Partial("AllBooks", book);
+        }
+    }
+</div>

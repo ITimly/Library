@@ -1,0 +1,9 @@
+﻿@model User
+<tr>
+    <td>@Model.Id</td>
+    <td>@Model.Name</td>
+    <td>@Model.Email</td>
+    <td>@Model.Password</td>
+    <td>@Model.Level</td>
+    <td><a asp-controller="Admin" asp-action="AccauntControl" asp-route-id="@Model.Id">Управление</a></td>
+</tr>

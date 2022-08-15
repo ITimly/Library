@@ -1,0 +1,20 @@
+﻿<a class="btn btn-primary mr-2" asp-controller="Librarian" asp-action="">Текущие заказы</a>
+<a class="btn btn-primary" asp-area="" asp-controller="Librarian" asp-action="BookControl">Книги в библиотеке</a>
+<h1>Книги в наличии:</h1>
+<div class="mt-5 mb-2">
+    <table class="table">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Название</th>
+            <th scope="col">Автор</th>
+            <th scope="col">Картинка</th>
+            <th scope="col">Количество</th>
+            <th scope="col">Управление количеством</th>
+        </tr>
+        @{ foreach (Book book in Model.Books)
+            {
+                @Html.Partial("AllBookControl", book);
+            }
+        }
+    </table>
+</div>

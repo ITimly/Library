@@ -1,0 +1,9 @@
+﻿@model Book
+<tr>
+    <td>@Model.Id</td>
+    <td>@Model.Name</td>
+    <td>@Model.Author</td>
+    <td><img class="img-thumbnail img-fluid" style="width: 50px" src="@Model.Img" alt="@Model.Name" /></td>
+    <td>@Model.Quantity</td>
+    <td><a class="btn btn-success mr-2" asp-controller="Librarian" asp-action="BookAdd" asp-route-id="@Model.Id">Добавить</a><a class="btn btn-danger" asp-controller="Librarian" asp-action="BookTake" asp-route-id="@Model.Id">Убавить</a></td>
+</tr>

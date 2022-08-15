@@ -1,0 +1,36 @@
+﻿@model User
+<div class="container">
+    <h3>Измените для обновления данных</h3>
+    <form asp-action="NewUser" method="post" class="form-horizontal">
+        <div class="text-danger mt-3 mb-2">@Html.ValidationMessage("ValidUser")</div>
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <div class="col-md-5">
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <div class="col-md-5">
+                <input asp-for="Email" class="form-control"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <div class="col-md-5">
+                <input asp-for="Password" class="form-control"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Level"></label>
+            <div class="col-md-5">
+                <input asp-for="Level" class="form-control"/>
+                <span asp-validation-for="Level" class="text-danger"></span>
+            </div>
+        </div>
+        <input class="btn btn-success" type="submit" value="Создать пользователя" />
+    </form>
+</div>

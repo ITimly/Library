@@ -1,0 +1,39 @@
+﻿@model User
+<div class="container">
+    <h3>Измените для обновления данных</h3>
+    <form asp-action="AccauntControl" method="post" class="form-horizontal">
+        <div class="text-danger mt-3 mb-2">@Html.ValidationMessage("ValidUser")</div>
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <div class="col-md-5">
+                <input asp-for="Name" class="form-control" value="@Model.Name"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <div class="col-md-5">
+                <input asp-for="Email" class="form-control" value="@Model.Email"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <div class="col-md-5">
+                <input asp-for="Password" class="form-control" value="@Model.Password"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Level"></label>
+            <div class="col-md-5">
+                <input asp-for="Level" class="form-control" value="@Model.Level"/>
+                <span asp-validation-for="Level" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <input class="btn btn-success" type="submit" value="Завершить редактирование" />
+            <a class="btn btn-danger ml-5" asp-controller="Admin" asp-action="UserDelete" asp-route-id="@Model.Id">Удалить аккаунт</a>
+        </div>
+    </form>
+</div>

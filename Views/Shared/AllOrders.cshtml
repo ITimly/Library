@@ -1,0 +1,10 @@
+﻿@model OrderDetail
+<tr>
+    <td>@Model.Id</td>
+    <td>@Model.OrderId</td>
+    <td>@Model.BookId</td>
+    <td>@Model.User.Id</td>
+    <td>@Model.Status</td>
+    <td>@Model.OrderTime</td>
+    <td><a asp-controller="Librarian" asp-action="OrderDetailCart" asp-route-id="@Model.Id">Управление</a></td>
+</tr>
